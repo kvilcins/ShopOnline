@@ -1,0 +1,16 @@
+.banners {
+  padding: 0 0 91px 0;
+}
+
+@media screen and (max-width: 814px) {
+  .banners {
+    padding: 0 0 65px 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .banners {
+    padding: 0 0 43px 0;
+  }
+}
+

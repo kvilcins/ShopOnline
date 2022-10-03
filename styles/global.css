@@ -1,0 +1,108 @@
+@font-face {
+  font-family: Lato;
+  src: local("Lato"), local("Lato-Regular"), local("Lato Regular"),
+  url("/fonts/lato-regular.woff2") format(woff2),
+  url("/fonts/lato-regular.woff") format(woff);
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Lato;
+  src: local("Lato-Bold"), local("Lato Bold"),
+  url("/fonts/lato-bold.woff2") format(woff2),
+  url("/fonts/lato-bold.woff") format(woff);
+  font-weight: 700;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #2d2d2d;
+  font-family: Lato,
+  Open Sans,
+  sans-serif;
+  padding: 0 20px;
+}
+
+article {
+  margin: 75px;
+}
+
+h1, p, img, ol {
+  margin: 0 0 50px;
+}
+
+h1, p, img, h2 {
+  line-height: 33px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  /*font-size: 22px;*/
+  margin: 0; /* нужно прописать margin для article */
+}
+
+img, svg {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1770px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    padding: 0 42px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 34px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  body {
+    padding: 0 20px;
+  }
+}
