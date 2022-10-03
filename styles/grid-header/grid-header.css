@@ -139,7 +139,6 @@
 
   .grid-header__menu:before {
     content: '';
-    background-image: url("../img/sort.svg");
     width: 14px;
     height: 14px;
     background-size: 14px 14px;
