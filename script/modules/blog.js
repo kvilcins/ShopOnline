@@ -99,22 +99,111 @@ const createPreview = (article) => {
   return preview;
 }
 
-// Получаем элемент, в который будем добавлять превью
+// Функция для создания кнопки пагинации
+function createPaginationButton(page, current, text) {
+  const link = document.createElement('a');
+  link.classList.add('pagination__button');
+  link.href = `blog.html?page=${page}`;
+
+  if (text === 'Назад') {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '29');
+    svg.setAttribute('height', '19');
+    svg.setAttribute('viewBox', '0 0 29 19');
+    svg.setAttribute('fill', 'none');
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M28.375 7.95833H6.52958L12.0487 2.42375L9.875 0.25L0.625 9.5L9.875 18.75L12.0487 16.5762L6.52958 11.0417H28.375V7.95833Z');
+    path.setAttribute('fill', '#8F8F8F');
+
+    svg.appendChild(path);
+    link.appendChild(svg);
+  } else if (text === 'Вперед') {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '29');
+    svg.setAttribute('height', '19');
+    svg.setAttribute('viewBox', '0 0 29 19');
+    svg.setAttribute('fill', 'none');
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M0.625 7.95833H22.4704L16.9513 2.42375L19.125 0.25L28.375 9.5L19.125 18.75L16.9513 16.5763L22.4704 11.0417H0.625V7.95833Z');
+    path.setAttribute('fill', '#8F8F8F');
+
+    svg.appendChild(path);
+    link.appendChild(svg);
+  } else {
+    link.textContent = text || page;
+  }
+
+  if (page === current) {
+    link.classList.add('pagination__button--current');
+    link.href = 'blog.html';
+  }
+
+  if (page === null) {
+    link.classList.add('pagination__button--disabled');
+    link.href = '#';
+    link.addEventListener('click', event => event.preventDefault());
+  }
+
+  return link;
+}
+
+// Функция для создания пагинации
+function createPagination(pagination, currentPage) {
+  const paginationContainer = document.getElementById('pagination');
+
+  const prevButton = createPaginationButton(currentPage - 1, currentPage, 'Назад');
+  paginationContainer.appendChild(prevButton);
+
+  let startPage = currentPage - 1;
+  if (currentPage === 1) {
+    startPage = currentPage;
+  }
+
+  for (let i = startPage; i <= startPage + 2; i++) {
+    if (i >= 1 && i <= pagination.pages) {
+      const pageButton = createPaginationButton(i, currentPage);
+      paginationContainer.appendChild(pageButton);
+    }
+  }
+
+  const nextButton = createPaginationButton(currentPage + 1, currentPage, 'Вперед');
+  if (currentPage >= pagination.pages) {
+    nextButton.classList.add('pagination__button--disabled');
+    nextButton.href = '#';
+    nextButton.addEventListener('click', event => event.preventDefault());
+  }
+  paginationContainer.appendChild(nextButton);
+}
+
+// Функция для получения текущей страницы из URL
+const getCurrentPage = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return parseInt(urlParams.get('page')) || 1;
+}
+
+// Получаем элементы, в которые будем добавлять превью и пагинацию
 const previewsContainer = document.getElementById('previews');
+const paginationContainer = document.getElementById('pagination');
+
+// Получаем текущую страницу из URL
+const currentPage = getCurrentPage();
 
 // Делаем GET-запрос к API для получения данных о статьях
-fetch('https://gorest.co.in/public-api/posts')
+fetch(`https://gorest.co.in/public-api/posts?page=${currentPage}`)
   .then(response => response.json())
   .then(data => {
-    // Получаем массив статей из ответа API
+    // Получаем массив статей и информацию о пагинации из ответа API
     const articles = data.data;
+    const pagination = data.meta.pagination;
 
     // Создаем и добавляем превью для каждой статьи
     for (const article of articles) {
       // Создаем объект с информацией о статье
       const articleData = {
         title: article.title,
-        link: '#',
+        link: `article.html?id=${article.id}`,
         image: 'styles/preview/img/shoe-preview.png',
         date: '01.01.2022',
         time: '12:00',
@@ -126,4 +215,7 @@ fetch('https://gorest.co.in/public-api/posts')
       const preview = createPreview(articleData);
       previewsContainer.appendChild(preview);
     }
+
+    // Создаем и добавляем пагинацию
+    createPagination(pagination, currentPage);
   });

@@ -7,3 +7,5 @@
 @import "grid-header/grid-header.css";
 @import "grid-item-wrap/grid-item-wrap.css";
 @import "header/header.css";
+@import "pagination/pagination.css";
+@import "preview/preview.css";
