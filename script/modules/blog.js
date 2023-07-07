@@ -133,6 +133,7 @@ function createPaginationButton(page, current, text) {
     link.appendChild(svg);
   } else {
     link.textContent = text || page;
+    link.classList.add('pagination__link'); // Добавляем класс 'pagination__link' только для страниц пагинации
   }
 
   if (page === current) {
@@ -148,6 +149,8 @@ function createPaginationButton(page, current, text) {
 
   return link;
 }
+
+
 
 // Функция для создания пагинации
 function createPagination(pagination, currentPage) {
@@ -200,15 +203,28 @@ fetch(`https://gorest.co.in/public-api/posts?page=${currentPage}`)
 
     // Создаем и добавляем превью для каждой статьи
     for (const article of articles) {
+      const maxLength = 40;
+      let shortTitle = article.title;
+
+      if (article.title.length > maxLength) {
+        shortTitle = article.title.substring(0, maxLength) + '...';
+      }
+
+      // Форматируем количество просмотров и комментариев
+      const views = Math.floor(Math.random() * 1000);
+      const formattedViews = views > 1000 ? (views / 1000).toFixed(1) + 'K' : views;
+      const comments = Math.floor(Math.random() * 100);
+      const formattedComments = comments > 1000 ? (comments / 1000).toFixed(1) + 'K' : comments;
+
       // Создаем объект с информацией о статье
       const articleData = {
-        title: article.title,
+        title: shortTitle,
         link: `article.html?id=${article.id}`,
         image: 'styles/preview/img/shoe-preview.png',
-        date: '01.01.2022',
+        date: '01 января 2022',
         time: '12:00',
-        views: Math.floor(Math.random() * 1000),
-        comments: Math.floor(Math.random() * 100)
+        views: formattedViews,
+        comments: formattedComments,
       };
 
       // Создаем и добавляем превью для статьи
