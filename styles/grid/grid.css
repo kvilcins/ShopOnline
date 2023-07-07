@@ -146,10 +146,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-  body {
-    padding: 0 42px;
-  }
-
   .grid {
     gap: 30px;
     grid-template-columns: repeat(4, 1fr);
@@ -199,10 +195,6 @@
 }
 
 @media screen and (max-width: 814px) {
-  body {
-    padding: 0 34px;
-  }
-
   .grid {
     gap: 20px;
     grid-template-columns: 1.21fr 1.21fr 1.6fr 1.55fr;
@@ -239,6 +231,10 @@
 }
 
 @media screen and (max-width: 630px) {
+  /*body {*/
+  /*  padding: 0 20px;*/
+  /*}*/
+
   .grid {
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
