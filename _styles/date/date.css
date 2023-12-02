@@ -1,0 +1,57 @@
+.date {
+  font-weight: 700;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  height: 78px;
+  align-items: center;
+}
+
+.date__bigger {
+  font-weight: 700;
+  font-size: 60px;
+}
+
+@media screen and (max-width: 1200px) {
+  .date {
+    height: auto;
+    gap: 20px;
+  }
+
+  .date__item {
+    font-size: 20px;
+  }
+
+  .date__bigger {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .date__item {
+    font-size: 16px;
+  }
+
+  .date__bigger {
+    font-size: 30px;
+  }
+
+  .date {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .date__item {
+    font-size: 12px;
+  }
+
+  .date__bigger {
+    font-size: 20px;
+  }
+
+  .date {
+    gap: 8px;
+  }
+}

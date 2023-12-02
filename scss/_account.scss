@@ -1,0 +1,94 @@
+@import "_var.scss";
+
+.account {
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 73px 70px 82px;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    max-width: 354px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    color: $charcoal;
+    cursor: pointer;
+
+    &_profile:before {
+      content: '';
+      background-image: url('../../img/profile.svg');
+      background-size: 36px 36px;
+      height: 36px;
+      width: 36px;
+    }
+
+    &_cart:before {
+      content: '';
+      background-image: url('../../img/shopping_cart.svg');
+      background-size: 36px 36px;
+      height: 36px;
+      width: 36px;
+    }
+
+    &_favorite:before {
+      content: '';
+      background-image: url('../../img/favorite.svg');
+      background-size: 36px 36px;
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    &__list {
+      gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 814px) {
+    &__list {
+      gap: 30px;
+    }
+
+    &__item {
+      font-size: 12px;
+
+      &_profile:before,
+      &_cart:before,
+      &_favorite:before {
+        background-size: 30px 30px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    &__list {
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+      visibility: hidden;
+      width: 30px;
+      height: 30px;
+
+      &_profile:before,
+      &_cart:before,
+      &_favorite:before {
+        visibility: visible;
+        position: absolute;
+      }
+    }
+  }
+}

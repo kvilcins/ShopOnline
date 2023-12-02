@@ -1,2 +1,4 @@
-import './modules/blog.js';
+import './modules/header.js';
+import './modules/footer.js';
+import './modules/breadcrumbs.js';
 import './modules/timer.js';

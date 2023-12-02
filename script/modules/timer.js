@@ -1,22 +1,29 @@
 class Timer {
-  constructor(selector, deadline) {
+  constructor(selector, fixedDeadline) {
     this.selector = selector;
-    this.deadline = deadline;
+    this.fixedDeadline = new Date(fixedDeadline);
     this.timeInterval = null;
     this.timeRemaining = null;
-  };
+  }
 
   init = () => {
-    this.timeRemaining = this.getTimeRemaining();
-    this.updateClock();
+    this.updateTimer();
     this.timeInterval = setInterval(() => {
-      this.timeRemaining = this.getTimeRemaining();
-      this.updateClock();
+      this.updateTimer();
     }, 1000);
   };
 
+  updateTimer = () => {
+    this.timeRemaining = this.getTimeRemaining();
+
+    if (this.timeRemaining.total <= 0) {
+    }
+
+    this.renderTimer();
+  };
+
   getTimeRemaining = () => {
-    const t = Date.parse(this.deadline) - Date.parse(new Date());
+    const t = this.fixedDeadline.getTime() - new Date().getTime();
     const seconds = Math.floor((t / 1000) % 60);
     const minutes = Math.floor((t / 1000 / 60) % 60);
     const hours = Math.floor((t / (1000 * 60 * 60)) % 24);
@@ -24,41 +31,41 @@ class Timer {
     return { total: t, days, hours, minutes, seconds };
   };
 
-  updateClock = () => {
+  renderTimer = () => {
+    let output = "";
     if (this.timeRemaining.total <= 0) {
       clearInterval(this.timeInterval);
-      document.querySelector(this.selector).innerHTML = "Акция закончилась";
-      document.querySelector('.description-ending').style.display = 'none';
       return;
-    };
+    }
 
-    let output = "";
     if (this.timeRemaining.days > 0) {
       output += `<p class="date__item"><span class="date__bigger">${this.timeRemaining.days}</span> ${this.declOfNum(this.timeRemaining.days, ['день', 'дня', 'дней'])}</p>`;
-    };
+    }
 
-    if (this.timeRemaining.total < (24 * 60 * 60 * 1000)) {
+    if (this.timeRemaining.total < 24 * 60 * 60 * 1000) {
       output += `<p class="date__item"><span class="date__bigger">${this.addZero(this.timeRemaining.hours)}</span> ${this.declOfNum(this.timeRemaining.hours, ['час', 'часа', 'часов'])}</p><p class="date__item"><span class="date__bigger">${this.addZero(this.timeRemaining.minutes)}</span> ${this.declOfNum(this.timeRemaining.minutes, ['минута', 'минуты', 'минут'])}</p><p class="date__item"><span class="date__bigger">${this.addZero(this.timeRemaining.seconds)}</span> ${this.declOfNum(this.timeRemaining.seconds, ['секунда', 'секунды', 'секунд'])}</p>`;
     } else {
       output += `<p class="date__item"><span class="date__bigger">${this.addZero(this.timeRemaining.hours)}</span> ${this.declOfNum(this.timeRemaining.hours, ['час', 'часа', 'часов'])}</p><p class="date__item"><span class="date__bigger">${this.addZero(this.timeRemaining.minutes)}</span> ${this.declOfNum(this.timeRemaining.minutes, ['минута', 'минуты', 'минут'])}</p>`;
-    };
+    }
 
     document.querySelector(this.selector).innerHTML = output;
   };
 
-  addZero = num => num < 10 ? `0${num}` : num;
+  addZero = num => (num < 10 ? `${num}` : num);
 
   declOfNum = (number, titles) => {
     const cases = [2, 0, 1, 1, 1, 2];
-    return titles[(number % 100 >4 && number %100 <20)?2:cases[(number%10<5)?number%10:5]];
+    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
   };
-};
+}
 
-document.addEventListener("DOMContentLoaded", () => {
+const runTimer = () => {
+  const fixedDeadline = '2024-03-01T23:59:59Z'; // Дедлайн
   const timerElements = document.querySelectorAll('[data-timer-deadline]');
   timerElements.forEach(el => {
-    const deadline = el.getAttribute('data-timer-deadline');
-    const timer = new Timer(`#${el.id}`, deadline);
+    const timer = new Timer(`#${el.id}`, fixedDeadline);
     timer.init();
   });
-});
+}
+
+export { runTimer };

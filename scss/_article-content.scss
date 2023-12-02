@@ -1,0 +1,23 @@
+.article-content {
+  &__img {
+    margin: 0 0 20px 0;
+  }
+
+  &__p {
+    line-height: 28px;
+    margin: 0 0 20px 0;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 815px) {
+    &__p {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    &__p {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.article {
+  margin: 0 0 100px 0;
+
+  &__h1 {
+    font-size: 50px;
+  }
+
+  &__p,
+  &__ol {
+    line-height: 28px;
+    font-size: 18px;
+  }
+
+  &__p {
+    margin: 0 0 20px 0;
+  }
+
+  @media screen and (max-width: 815px) {
+    &__h1 {
+      font-size: 40px;
+    }
+
+    &__p,
+    &__ol {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    &__h1 {
+      font-size: 30px;
+    }
+
+    &__p,
+    &__ol {
+      font-size: 14px;
+    }
+  }
+}

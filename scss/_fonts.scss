@@ -1,0 +1,14 @@
+@mixin font-face($font-family, $font-file, $font-weight, $font-style: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: local('#{$font-family}'), local('#{$font-family}-#{$font-style}'), local('#{$font-family} #{$font-style}'),
+    url('/fonts/#{$font-file}.woff2') format('woff2'),
+    url('/fonts/#{$font-file}.woff') format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+@include font-face('Lato', 'lato-regular', 500);
+@include font-face('Lato', 'lato-bold', 700);

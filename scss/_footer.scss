@@ -1,0 +1,127 @@
+@import "_var.scss";
+
+.footer {
+  background-color: $charcoal-rgba;
+  color: $milk-white-rgba;
+
+  &-info {
+    padding: 80px 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 30px 80px;
+  }
+
+  &-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  &-catalog__detail_title,
+  &-policy__detail_title,
+  &-contacts__detail_title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  &-catalog,
+  &-policy,
+  &-contacts {
+    display: grid;
+    gap: 40px;
+    font-size: 22px;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px 35px;
+  }
+
+  .policy-list {
+    display: grid;
+    gap: 20px;
+  }
+
+  .contacts-wrapper__detail {
+    font-size: 16px;
+  }
+
+  .contacts-wrapper {
+    display: grid;
+    gap: 10px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 20px;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 3;
+
+    &__detail_who {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    &-info {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: 1fr;
+      gap: 50px 0;
+    }
+
+    &-info__logo {
+      grid-column: 1/3;
+    }
+
+    &-policy,
+    &-catalog {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    &-list {
+      grid-template-columns: auto;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    &-wrap {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    .copyright {
+      font-size: 14px;
+      flex-direction: column;
+      gap: 20px 0;
+    }
+
+    &-policy,
+    &-catalog {
+      font-size: 14px;
+    }
+
+    .contacts-wrapper__detail {
+      font-size: 14px;
+    }
+
+    &-catalog__detail_title,
+    &-policy__detail_title,
+    &-contacts__detail_title {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.article {
+  margin: 0 0 100px 0;
+}
+
+.article__h1 {
+  font-size: 50px;
+}
+
+.article__p {
+  line-height: 28px;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+
+.article__ol {
+  line-height: 28px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 815px) {
+  .article__h1 {
+    font-size: 40px;
+  }
+
+  .article__p {
+    font-size: 16px;
+  }
+
+  .article__ol {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .article__h1 {
+    font-size: 30px;
+  }
+
+  .article__p {
+    font-size: 14px;
+  }
+
+  .article__ol {
+    font-size: 14px;
+  }
+}

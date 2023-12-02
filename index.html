@@ -5,90 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ShopOnline</title>
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+<!--  <link rel="stylesheet" href="styles/global.css">-->
+  <link rel="stylesheet" href="css/style.css">
   <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
   <script src="script/script.js" type="module"></script>
+  <script src="script/main.js" type="module"></script>
 </head>
 <body>
-  <header class="header">
-    <div class="container header__wrap grid-header">
-      <a href="/" class="header__link grid-header__link">Shop<span class="grid-header__span">Online</span></a>
-      <a href="#" class="header__link grid-header__menu">Меню</a>
 
-      <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="grid-header__search form">
-        <input name="search" placeholder="Я ищу..." type="search" class="form__input">
-        <button type="submit" class="form__button"></button>
-      </form>
-
-      <div class="grid-header__account account">
-        <ul class="account__list">
-          <li class="account__item account__item_profile">Профиль</li>
-          <li class="account__item account__item_cart">Корзина</li>
-          <li class="account__item account__item_favorite">Избранное</li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <section class="banners">
-      <div class="container">
-        <div class="banners-wrap grid">
-          <div class="grid__item grid__item_laptop grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_main">-50% на все ноутбуки</p>
-
-            <div class="grid-item-wrap__desc grid-item-wrap__desc_ending description-ending">
-              <p class="description-ending__title">До конца акции:</p>
-              <div class="description-ending__date date" id="timer1" data-timer-deadline="2023-07-04T00:00:00+03:00">
-<!--                <p class="date__item"><span class="date__bigger">3</span> дня</p>-->
-<!--                <p class="date__item"><span class="date__bigger">8</span> часов</p>-->
-<!--                <p class="date__item"><span class="date__bigger">43</span> минуты</p>-->
-              </div>
-            </div>
-          </div>
-          <div class="grid__item grid__item_book grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_book"><span class="grid-item-wrap__book-span">Книга</span> – лучший подарок</p>
-          </div>
-          <div class="grid__item grid__item_sales grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_sales">Время скидок!</p>
-          </div>
-          <div class="grid__item grid__item_shoes grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_shoes">Вторая пара кроссовок
-              <span class="grid-item-wrap__shoes-span">в подарок!</span></p>
-          </div>
-          <div class="grid__item grid__item_christmas-gifts grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_gifts">Идеи новогодних подарков</p>
-          </div>
-          <div class="grid__item grid__item_red-shoe grid-item-wrap">
-            <div class="grid-item-wrap__red-shoe"></div>
-          </div>
-          <div class="grid__item grid__item_december grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_december">Выгодно в декабре!</p>
-          </div>
-          <div class="grid__item grid__item_christmas-decoration grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_christmas-decoration">Новогодние украшения</p>
-          </div>
-          <div class="grid__item grid__item_red-dress grid-item-wrap">
-            <div class="grid-item-wrap__red-dress"></div>
-          </div>
-          <div class="grid__item grid__item_cleaning grid-item-wrap">
-            <p class="grid-item-wrap__desc grid-item-wrap__desc_cleaning">На бытовую химию</p>
-          </div>
-          <div class="grid__item grid__item_red-christmas grid-item-wrap"></div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-
-    </div>
-  </footer>
 </body>
 </html>

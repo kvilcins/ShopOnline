@@ -1,0 +1,29 @@
+.article-section__p {
+  line-height: 28px;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+
+.article-section__h2 {
+  font-size: 26px;
+}
+
+@media screen and (max-width: 815px) {
+  .article-section__h2 {
+    font-size: 22px;
+  }
+
+  .article-section__p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .article-section__h2 {
+    font-size: 20px;
+  }
+
+  .article-section__p {
+    font-size: 14px;
+  }
+}

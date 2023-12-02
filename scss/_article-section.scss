@@ -1,0 +1,31 @@
+.article-section {
+  &__p {
+    line-height: 28px;
+    margin: 0 0 20px 0;
+    font-size: 18px;
+  }
+
+  &__h2 {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 815px) {
+    &__h2 {
+      font-size: 22px;
+    }
+
+    &__p {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    &__h2 {
+      font-size: 20px;
+    }
+
+    &__p {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.footer {
+  background-color: rgba(45, 45, 45, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer-info {
+  padding: 80px 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 30px 80px;
+}
+
+.footer-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.footer-catalog__detail_title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.footer-policy__detail_title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.footer-contacts__detail_title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.footer-catalog {
+  display: grid;
+  gap: 40px;
+  font-size: 22px;
+}
+
+.footer-policy {
+  display: grid;
+  gap: 40px;
+  font-size: 22px;
+}
+
+.footer-contacts {
+  display: grid;
+  gap: 40px;
+  font-size: 22px;
+}
+
+.footer-list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px 35px;
+}
+
+.policy-list {
+  display: grid;
+  gap: 20px;
+}
+
+.contacts-wrapper__detail {
+  font-size: 16px;
+}
+
+.contacts-wrapper {
+  display: grid;
+  gap: 10px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / 3;
+}
+
+.copyright__detail_who {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1300px) {
+  .footer-info {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    gap: 50px 0;
+  }
+
+  .footer-info__logo {
+    grid-column: 1/3;
+  }
+
+  .footer-policy {
+    font-size: 18px;
+  }
+
+  .footer-catalog {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .footer-list {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .footer-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .copyright {
+    font-size: 14px;
+    flex-direction: column;
+    gap: 20px 0;
+  }
+
+  .footer-policy {
+    font-size: 14px;
+  }
+
+  .footer-catalog {
+    font-size: 14px;
+  }
+
+  .contacts-wrapper__detail {
+    font-size: 14px;
+  }
+
+  .footer-catalog__detail_title {
+    font-size: 20px;
+  }
+
+  .footer-policy__detail_title {
+    font-size: 20px;
+  }
+
+  .footer-contacts__detail_title {
+    font-size: 20px;
+  }
+}

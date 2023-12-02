@@ -1,0 +1,36 @@
+.breadcrumbs {
+  padding: 80px 0;
+}
+
+.breadcrumbs__list {
+  display: flex;
+}
+
+.breadcrumbs__item::after {
+  content: ">";
+  margin: 0 10px;
+}
+
+.breadcrumbs__item:last-child::after {
+  content: "";
+}
+
+@media screen and (max-width: 815px) {
+  .breadcrumbs {
+    padding: 50px 0;
+  }
+
+  .breadcrumbs__list {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .breadcrumbs {
+    padding: 30px 0;
+  }
+
+  .breadcrumbs__list {
+    font-size: 12px;
+  }
+}

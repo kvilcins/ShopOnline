@@ -1,0 +1,15 @@
+.banners {
+  padding: 90px 0;
+
+  @media screen and (max-width: 1200px) {
+    padding: 65px 0;
+  }
+
+  @media screen and (max-width: 814px) {
+    padding: 60px 0;
+  }
+
+  @media screen and (max-width: 630px) {
+    padding: 40px 0;
+  }
+}
