@@ -37,13 +37,24 @@ const createFooter = () => {
   catalogList.className = 'footer-catalog__detail footer-list';
   footerCatalog.appendChild(catalogList);
 
-  const catalogItems = ['Смартфоны', 'Ноутбуки', 'Ювелирные изделия', 'Одежда', 'Бытовая техника', 'Бытовая химия', 'Книги и журналы', 'Домашний текстиль', 'Электроника', 'Косметика'];
+  let catalogItems = [
+    {name: 'Смартфоны', url: '#'},
+    {name: 'Ноутбуки', url: '#'},
+    {name: 'Ювелирные изделия', url: '#'},
+    {name: 'Одежда', url: '#'},
+    {name: 'Бытовая техника', url: '#'},
+    {name: 'Книги и журналы', url: '#'},
+    {name: 'Домашний текстиль', url: '#'},
+    {name: 'Электроника', url: '#'},
+    {name: 'Косметика', url: '#'},
+  ];
+
   catalogItems.forEach(item => {
-    const li = document.createElement('li');
+    let li = document.createElement('li');
     li.className = 'footer-list__item';
-    const a = document.createElement('a');
-    a.href = '#';
-    a.textContent = item;
+    let a = document.createElement('a');
+    a.href = item.url;
+    a.textContent = item.name;
     li.appendChild(a);
     catalogList.appendChild(li);
   });
@@ -62,13 +73,19 @@ const createFooter = () => {
   policyList.className = 'footer-policy__detail policy-list';
   footerPolicy.appendChild(policyList);
 
-  const policyItems = ['Оплата заказа', 'Условия доставки', 'Условия возврата заказа', 'Блог'];
+  let policyItems = [
+    {name: 'Оплата заказа', url: '#'},
+    {name: 'Условия доставки', url: '#'},
+    {name: 'Условия возврата заказа', url: '#'},
+    {name: 'Блог', url: 'blog.html'}
+  ];
+
   policyItems.forEach(item => {
-    const li = document.createElement('li');
+    let li = document.createElement('li');
     li.className = 'policy-list__item';
-    const a = document.createElement('a');
-    a.href = '#';
-    a.textContent = item;
+    let a = document.createElement('a');
+    a.href = item.url;
+    a.textContent = item.name;
     li.appendChild(a);
     policyList.appendChild(li);
   });
@@ -159,7 +176,7 @@ const createFooter = () => {
 
   // Создание копирайта
   const copyright = document.createElement('div');
-  copyright.className = 'copyright';
+  copyright.className = 'footer-info__copyright copyright';
   footerInfo.appendChild(copyright);
 
   const rightsDetail = document.createElement('p');

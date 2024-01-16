@@ -1,0 +1,153 @@
+@import "_var.scss";
+
+.header-menu {
+  opacity: 0;
+  visibility: hidden;
+
+  &__on {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    position: absolute;
+    top: 35px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    display: none;
+    cursor: pointer;
+
+    & span {
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: $black;
+      top: 13px;
+    }
+
+    & span:first-child {
+      transform: rotate(45deg);
+    }
+
+    & span:last-child {
+      transform: rotate(-45deg);
+    }
+
+    @media screen and (max-width: 720px) {
+      display: block;
+    }
+  }
+
+  &__absolute {
+    position: relative;
+  }
+
+  &__wrap {
+    display: grid;
+    background-color: $white;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+    align-content: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 470px;
+  }
+
+  &__catalog,
+  &__policy,
+  &__contacts {
+    display: grid;
+    gap: 40px;
+    font-size: 22px;
+    align-self: start;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px 35px;
+  }
+
+  &__list_grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px 35px;
+  }
+
+  @media screen and (max-width: 1300px) {
+    &__list {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    &__list {
+      grid-template-columns: auto;
+    }
+    &__wrap {
+      height: 585px;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    & {
+      position: fixed;
+      height: 100vh;
+      background-color: white;
+      top: 0;
+      width: 60%;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    &__on {
+      transform: translateX(0);
+    }
+
+    &__absolute {
+      position: unset;
+      padding: 40px 0 0 0;
+    }
+
+    &__wrap {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      height: auto;
+      position: unset;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    &__wrap {
+      gap: 20px;
+    }
+
+    &__catalog,
+    &__policy,
+    &__contacts {
+      gap: 20px;
+    }
+
+    &__list {
+      font-size: 14px;
+    }
+
+    &__list_grid {
+      gap: 15px 35px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+  }
+}

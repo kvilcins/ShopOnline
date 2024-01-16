@@ -38,6 +38,7 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
+    border: 0;
 
     &:before {
       content: '';
@@ -45,6 +46,10 @@
       width: 24px;
       height: 24px;
       background-size: 24px 24px;
+    }
+
+    &.clicked:before {
+      background-image: url("../../img/clear.svg");
     }
   }
 

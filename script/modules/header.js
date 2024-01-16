@@ -15,11 +15,10 @@ const createHeader = () => {
   shopLink.innerHTML = 'Shop<span class="grid-header__span">Online</span>';
   container.appendChild(shopLink);
 
-  const menuLink = document.createElement('a');
-  menuLink.href = '#';
-  menuLink.className = 'header__link grid-header__menu';
-  menuLink.textContent = 'Меню';
-  container.appendChild(menuLink);
+  const menuButton = document.createElement('button');
+  menuButton.className = 'header__link grid-header__menu';
+  menuButton.textContent = 'Меню';
+  container.appendChild(menuButton);
 
   const form = document.createElement('form');
   form.action = 'https://jsonplaceholder.typicode.com/posts';
@@ -66,4 +65,6 @@ const createHeader = () => {
   body.prepend(header);
 }
 
-export { createHeader };
+export {
+  createHeader,
+};

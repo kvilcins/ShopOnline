@@ -1,6 +1,7 @@
 import {createHeader} from "./modules/header.js";
 import {createFooter} from "./modules/footer.js";
 import {runTimer} from "./modules/timer.js";
+import {createMenu, handleMenu} from "./modules/menu.js"
 
 // Стрелочная функция для создания верстки
 const createMarkup = () => {
@@ -127,5 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createMarkup();
   runTimer();
   createFooter();
+  createMenu();
+  handleMenu();
 });
 
