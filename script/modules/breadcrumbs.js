@@ -57,7 +57,7 @@ class Breadcrumbs {
 
     // Если мы находимся на странице блога, делаем ссылку на блог неактивной
     if (this.title !== 'ShopOnline - Blog') {
-      blogLink.href = '/index.html/blog.html';
+      blogLink.href = `${basePath}/index.html/blog.html`;
     } else {
       // Не добавляем последний элемент, если мы находимся на странице блога
       list.appendChild(home);
