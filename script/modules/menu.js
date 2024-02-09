@@ -130,7 +130,7 @@ const handleMenu = () => {
 
   // Функция для закрытия меню при клике вне его
   let closeMenu = (event) => {
-    if (!menuToggle.contains(event.target)) {
+    if (menuToggle.classList.contains('header-menu__on') && !menuToggle.contains(event.target)) {
       toggleMenu(event); // Вызываем toggleMenu здесь
     }
   }
