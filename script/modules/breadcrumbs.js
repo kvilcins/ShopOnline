@@ -44,8 +44,10 @@ class Breadcrumbs {
     currentPage.className = 'breadcrumbs__item';
 
     // Создаем ссылки для 'Главная' и 'Блог'
+    const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    const basePath = isLocal ? "" : "/ShopOnline";
     const homeLink = document.createElement('a');
-    homeLink.href = '/index.html';
+    homeLink.href = `${basePath}/index.html`;
     homeLink.textContent = 'Главная';
     home.appendChild(homeLink);
 
