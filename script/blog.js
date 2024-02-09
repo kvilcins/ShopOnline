@@ -1,6 +1,7 @@
 import {createHeader} from "./modules/header.js";
 import {createFooter} from "./modules/footer.js";
 import {Breadcrumbs} from "./modules/breadcrumbs.js";
+import {createMenu, handleMenu} from "./modules/menu.js"
 
 // создание блога - верстка и fetch
 const createBlog = () => {
@@ -264,8 +265,9 @@ document.addEventListener('DOMContentLoaded',  () => {
   document.body.insertBefore(breadcrumbs.render(), mainElement);
 
   createBlog();
-
   createFooter();
+  createMenu();
+  handleMenu();
 });
 
 

@@ -1,6 +1,7 @@
 import {createHeader} from "./modules/header.js";
 import {createFooter} from "./modules/footer.js";
 import {Breadcrumbs} from "./modules/breadcrumbs.js";
+import {createMenu, handleMenu} from "./modules/menu.js"
 
 const createArticle = () => {
   let body = document.querySelector('body');
@@ -146,4 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createArticle();
   createFooter();
+  createMenu();
+  handleMenu();
 });

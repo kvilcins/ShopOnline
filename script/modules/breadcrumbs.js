@@ -55,9 +55,16 @@ class Breadcrumbs {
     blogLink.textContent = 'Блог';
     blog.appendChild(blogLink);
 
+    let blogPath;
+    if (isLocal) {
+      blogPath = '/index.html/blog.html';
+    } else {
+      blogPath = `${basePath}/blog.html`;
+    }
+
     // Если мы находимся на странице блога, делаем ссылку на блог неактивной
     if (this.title !== 'ShopOnline - Blog') {
-      blogLink.href = `${basePath}/index.html/blog.html`;
+      blogLink.href = blogPath;
     } else {
       // Не добавляем последний элемент, если мы находимся на странице блога
       list.appendChild(home);
