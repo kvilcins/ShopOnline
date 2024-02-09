@@ -119,35 +119,32 @@ const handleMenu = () => {
   // Получаем элементы
   let gridHeaderMenu = document.querySelector('.grid-header__menu');
   let menuToggle = document.querySelector('.header-menu');
-  let menuClose = document.querySelector('.header-menu__close'); // Новый элемент
+  let menuClose = document.querySelector('.header-menu__close');
 
   // Функция для переключения класса
   let toggleMenu = (event) => {
     event.stopPropagation(); // Останавливаем всплытие события
     menuToggle.classList.toggle('header-menu__on');
+    gridHeaderMenu.classList.toggle('clicked'); // Добавляем переключение иконки здесь
   }
 
   // Функция для закрытия меню при клике вне его
   let closeMenu = (event) => {
     if (!menuToggle.contains(event.target)) {
-      menuToggle.classList.remove('header-menu__on');
+      toggleMenu(event); // Вызываем toggleMenu здесь
     }
   }
 
   // Функция для закрытия меню при клике на крестик
   let closeMenuOnClick = (event) => {
     event.stopPropagation();
-    menuToggle.classList.remove('header-menu__on');
+    toggleMenu(event); // Вызываем toggleMenu здесь
   }
-
-  gridHeaderMenu.addEventListener('click', function() {
-    this.classList.toggle('clicked');
-  });
 
   // Добавляем обработчики событий
   gridHeaderMenu.addEventListener('click', toggleMenu);
   document.addEventListener('click', closeMenu);
-  menuClose.addEventListener('click', closeMenuOnClick); // Новый обработчик событий
+  menuClose.addEventListener('click', closeMenuOnClick);
 }
 
 
