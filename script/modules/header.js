@@ -9,11 +9,14 @@ const createHeader = () => {
   container.className = 'container header__wrap grid-header';
   header.appendChild(container);
 
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  const basePath = isLocal ? "" : "/ShopOnline";
   const shopLink = document.createElement('a');
-  shopLink.href = '/index.html';
+  shopLink.href = `${basePath}/index.html`;
   shopLink.className = 'header__link grid-header__link';
   shopLink.innerHTML = 'Shop<span class="grid-header__span">Online</span>';
   container.appendChild(shopLink);
+
 
   const menuButton = document.createElement('button');
   menuButton.className = 'header__link grid-header__menu';
