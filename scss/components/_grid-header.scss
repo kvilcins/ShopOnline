@@ -42,14 +42,14 @@
 
     &:before {
       content: '';
-      background-image: url("../../img/sort.svg");
+      background-image: url("/ShopOnline/img/sort.svg");
       width: 24px;
       height: 24px;
       background-size: 24px 24px;
     }
 
     &.clicked:before {
-      background-image: url("../../img/clear.svg");
+      background-image: url("/ShopOnline/img/clear.svg");
     }
   }
 

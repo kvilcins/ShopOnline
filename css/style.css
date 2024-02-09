@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Lato";
-  src: local("Lato"), local("Lato-normal"), local("Lato normal"), url("/fonts/lato-regular.woff2") format("woff2"), url("/fonts/lato-regular.woff") format("woff");
+  src: local("Lato"), local("Lato-normal"), local("Lato normal"), url("/ShopOnline/fonts/lato-regular.woff2") format("woff2"), url("/ShopOnline/fonts/lato-regular.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Lato";
-  src: local("Lato"), local("Lato-normal"), local("Lato normal"), url("/fonts/lato-bold.woff2") format("woff2"), url("/fonts/lato-bold.woff") format("woff");
+  src: local("Lato"), local("Lato-normal"), local("Lato normal"), url("/ShopOnline/fonts/lato-bold.woff2") format("woff2"), url("/ShopOnline/fonts/lato-bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -132,21 +132,21 @@ ol {
 }
 .account__item_profile:before {
   content: "";
-  background-image: url("../../img/profile.svg");
+  background-image: url("/ShopOnline/img/profile.svg");
   background-size: 36px 36px;
   height: 36px;
   width: 36px;
 }
 .account__item_cart:before {
   content: "";
-  background-image: url("../../img/shopping_cart.svg");
+  background-image: url("/ShopOnline/img/shopping_cart.svg");
   background-size: 36px 36px;
   height: 36px;
   width: 36px;
 }
 .account__item_favorite:before {
   content: "";
-  background-image: url("../../img/favorite.svg");
+  background-image: url("/ShopOnline/img/favorite.svg");
   background-size: 36px 36px;
   height: 36px;
   width: 36px;
@@ -465,7 +465,7 @@ ol {
   border-radius: 30px;
   width: 101px;
   height: 54px;
-  background-image: url("../../img/search.svg");
+  background-image: url("/ShopOnline/img/search.svg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center center;
@@ -829,13 +829,13 @@ ol {
 }
 .grid-header__menu:before {
   content: "";
-  background-image: url("../../img/sort.svg");
+  background-image: url("/ShopOnline/img/sort.svg");
   width: 24px;
   height: 24px;
   background-size: 24px 24px;
 }
 .grid-header__menu.clicked:before {
-  background-image: url("../../img/clear.svg");
+  background-image: url("/ShopOnline/img/clear.svg");
 }
 @media screen and (max-width: 1200px) {
   .grid-header {

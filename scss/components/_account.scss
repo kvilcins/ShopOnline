@@ -25,7 +25,7 @@
 
     &_profile:before {
       content: '';
-      background-image: url('../../img/profile.svg');
+      background-image: url('/ShopOnline/img/profile.svg');
       background-size: 36px 36px;
       height: 36px;
       width: 36px;
@@ -33,7 +33,7 @@
 
     &_cart:before {
       content: '';
-      background-image: url('../../img/shopping_cart.svg');
+      background-image: url('/ShopOnline/img/shopping_cart.svg');
       background-size: 36px 36px;
       height: 36px;
       width: 36px;
@@ -41,7 +41,7 @@
 
     &_favorite:before {
       content: '';
-      background-image: url('../../img/favorite.svg');
+      background-image: url('/ShopOnline/img/favorite.svg');
       background-size: 36px 36px;
       height: 36px;
       width: 36px;
